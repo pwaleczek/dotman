@@ -17,11 +17,17 @@ if [ -d "$DOTMAN_DIR" ]; then
     printf "...\e[0;31msomething went wrong\e[0m. Here's the output:\n"
     echo "$OUT"
   else
-    printf "...\e[0;32mdone\e[0m!\n"
+    printf "\e[0;32m==>\e[0mDone!\n"
   fi
 else
   printf "\e[0;32mInstalling dotman...\n"
-  git clone https://github.com/pwaleczek/dotman.git $DOTMAN_DIR
+  OUT=$(git clone https://github.com/pwaleczek/dotman.git $DOTMAN_DIR 2>&1)
+  if [ "$?" != 0 ]; then
+    printf "\e[0;31m!!!\e[0m Something went wrong. Here's the output:\n"
+    echo "$OUT"
+  else
+    printf "\e[0;32m==>\e[0mDone!\n"
+  fi
 fi
 
 
@@ -53,6 +59,7 @@ if [ -z "$PROFILE" ] || [ ! -f "$PROFILE" ]; then
         printf "\n\n$PROFILE_ADD\n" >> "$HOME/.bash_profile"
         source $HOME/.bash_profile
         printf "\e[0;32m==>\e[0m And you're good to go!"
+        
         exit;;
       [Nn]* )
         printf "\e[0;33m***\e[0m Ok, so do it on your own, like this:\n"

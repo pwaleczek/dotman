@@ -2,7 +2,6 @@
 
 # directories
 #
-DOTMAN_DIR="$HOME/.dotman"
 PACKAGES_DIR="$DOTMAN_DIR/packages"
 
 # colors

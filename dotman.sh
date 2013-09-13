@@ -1,30 +1,29 @@
 #!/usr/bin/env bash
 
+# wrapper function for dotman
+export DOTMAN_DIR="$HOME/.dotman"
+
 dotman() {
+  local DOTMAN_DIR="$HOME/.dotman"
+  local -a FUNCTIONS=(
+    "install"
+    "remove"
+    "list"
+    "update"
+    "upgrade"
+    "register"
+    "build"
+    "publish"
+    "unpublish"
+    "help"
+    "version"
+  )
   local -a ARGS="$@"
 
-  if [ ! "$1" ]; then
-    printf "Do it like this:\n"
-    printf "  dotman install <package> [version]\n"
-    printf "  dotman remove <package> [version]\n"
-    printf "  dotman list\n"
-    printf "  dotman update [package]\n"
-    printf "  dotman upgrade\n\n"
-    printf "Register yourself:\n"
-    printf "  dotman register <username>\n\n"
-    printf "Manage your own packages:\n"
-    printf "  dotman build <name> [directory]\n"
-    printf "  dotman publish <package>\n"
-    printf "  dotman unpublish <package>\n"
-    return
+  if [ ! "$1" ] || [[ ! "${FUNCTIONS[*]}" =~ (^|[^[:alpha:]])$1([^[:alpha:]]|$) ]]; then
+    $DOTMAN_DIR/bin/help.sh
+  else
+    # run sub script with filtered arguments
+    $DOTMAN_DIR/bin/$1.sh ${ARGS[@]/$1/}
   fi
-
-  if [ "$1" == "-h" ] || [ "$1" == "--help" ]; then
-    printf "Help will go here\n"
-    return
-  fi
-
-  # run sub script with filtered arguments
-  ./bin/$1.sh ${ARGS[@]/$1/}
-
 }
