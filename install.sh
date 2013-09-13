@@ -11,8 +11,14 @@ printf "  \\__,_|\___/ \\__|_| |_| |_|\__,_|_| |_|\e[0m\n\n"
 if [ -d "$DOTMAN_DIR" ]; then
   printf "\e[0;33m***\e[0m dotman is already installed.\n"
   printf "\e[0;32m==>\e[0m Updating...\n"
-  cd $DOTMAN_DIR && git pull
-  printf "...\e[0;32mdone\e[0m!\n"
+  cd $DOTMAN_DIR
+  OUT=$(git pull 2>&1)
+  if [ "$?" != 0 ]; then
+    printf "...\e[0;31msomething went wrong\e[0m. Here's the output:\n"
+    echo "$OUT"
+  else
+    printf "...\e[0;32mdone\e[0m!\n"
+  fi
 else
   printf "\e[0;32mInstalling dotman...\n"
   git clone https://github.com/pwaleczek/dotman.git $DOTMAN_DIR
