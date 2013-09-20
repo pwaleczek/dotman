@@ -61,6 +61,15 @@ fi
 #
 print_info "Installing packages:\n"
 printf "  $AVAILABLE\n\n"
+
 for package in "$AVAILABLE"; do
-  print_info "Installing $package...\n"
+  print_info "$package:\n"
+  # download
+  __download $package
+  if [ "$?" -ne 0]; then
+    print_err "Couldn't get $package. Skipping...\n"
+    continue
+  else
+    __install $package
+  fi
 done

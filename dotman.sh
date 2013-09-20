@@ -12,6 +12,7 @@ dotman() {
     "update"
     "upgrade"
     "register"
+    "init"
     "build"
     "publish"
     "unpublish"
