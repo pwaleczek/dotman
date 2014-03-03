@@ -1,16 +1,16 @@
-      _       _
-   __| | ___ | |_ _ __ ___   __ _ _ __
-  / _` |/ _ \| __| '_ ` _ \ / _` | '_ \
- | (_| | (_) | |_| | | | | | (_| | | | |
-  \__,_|\___/ \__|_| |_| |_|\__,_|_| |_|
+         _       _
+      __| | ___ | |_ _ __ ___   __ _ _ __
+     / _` |/ _ \| __| '_ ` _ \ / _` | '_ \
+    | (_| | (_) | |_| | | | | | (_| | | | |
+     \__,_|\___/ \__|_| |_| |_|\__,_|_| |_|
+                                            WIP
 
 
-
-### the dot files manager
+#the dot files manager
 
 ... TODO: lots of stuff
 
-### License
+##License
 
 DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE Version 2, December 2004
 
