@@ -13,3 +13,5 @@ group :test do
   gem "sqlite3"
   gem "webmock"
 end
+
+gem "colored"
