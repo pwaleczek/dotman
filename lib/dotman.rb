@@ -1,4 +1,3 @@
-require "dotman/core"
 require "dotman/version"
 
 module Dotman

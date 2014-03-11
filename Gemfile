@@ -11,7 +11,5 @@ group :test do
   gem "json"
   gem "rspec", ">= 2.0"
   gem "sqlite3"
-  gem "webmock"
 end
 
-gem "colored"

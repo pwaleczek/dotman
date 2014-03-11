@@ -15,7 +15,7 @@ class Dotman::Config
   private :config_defaults
 
 
-  def initialize config_file = File.join ENV['HOME'], '.dotmanrc'
+  def initialize config_file = File.join(ENV['HOME'], '.dotmanrc')
     @config_file  = config_file
     @params       = {}
 

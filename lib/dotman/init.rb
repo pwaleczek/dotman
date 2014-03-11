@@ -1,4 +1,3 @@
-require "colored"
 require "dotman/messages"
 
 module Heroku
