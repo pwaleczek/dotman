@@ -8,5 +8,9 @@ module Dotman
       end
     end
 
+    def self.run cmd, args
+
+    end
+
   end
 end

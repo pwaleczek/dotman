@@ -1,13 +1,12 @@
 require "dotman"
 require "dotman/init"
 require "dotman/command"
-require "dotman/config"
 require "dotman/logger"
+
 
 class Dotman::Cli
 
   def self.run *args
-      Dotman::Logger.debug "dotman"
     begin
       if $stdin.isatty
         $stdin.sync = true
