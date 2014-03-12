@@ -1,3 +1,4 @@
+# encoding: utf-8
 require "dotman/version"
 require "dotman/util"
 require "dotman/config"
