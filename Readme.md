@@ -8,6 +8,8 @@
 
 #the dot files manager
 
+[![Build Status](https://travis-ci.org/pwaleczek/dotman.png?branch=master)](https://travis-ci.org/pwaleczek/dotman)
+
 ... TODO: lots of stuff
 
 ##License
