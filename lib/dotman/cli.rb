@@ -1,4 +1,3 @@
-require "dotman"
 require "dotman/init"
 require "dotman/command"
 require "dotman/logger"

@@ -8,15 +8,21 @@ module Dotman
 
     extend Dotman::Util
 
-    def self.init(verbosity)
-      @@verbosity = verbosity || 1
+    def self.init(verbosity = 1)
+      @@verbosity = verbosity
     end
 
-    def self.info text; puts "#{Util::green} ░▒▓█#{Util::reset} #{text}" if @@verbosity >= 3; end
+    def self.info text
+      self.putlog, Util::green if @@verbosity >= 3; end
     def self.warn text; puts "#{Util::yellow} ░▒▓█#{Util::reset} #{text}" if @@verbosity >= 2; end
-    def self.error text; puts "#{Util::red} ░▒▓█#{Util::reset} #{text}" if @@verbosity >= 1; end
+    def self.error text; puts  if @@verbosity >= 1; end
 
     def self.debug text; puts "#{Util::gray} ░▒▓█#{Util::reset} #{text}" if @@verbosity >= 4; end
+
+    def self.putlog text, color
+      "#{color} ░▒▓█#{Util::reset} #{text}"
+    end
+
     def self.error_trace trace
       if @@verbosity >= 4
         return

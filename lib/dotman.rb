@@ -1,4 +1,5 @@
 require "dotman/version"
+require "dotman/cli"
 
 module Dotman
 
