@@ -3,7 +3,6 @@ require "dotman/version"
 
 module Dotman
   module Config
-    # attr_reader :config_file, :params
 
     OPTPARE_EXCEPTIONS = [OptionParser::AmbiguousOption, OptionParser::InvalidOption]
 
